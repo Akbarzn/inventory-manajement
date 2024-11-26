@@ -86,7 +86,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 /* margin-left: px; */
 transition: width 0.3s ease, left 0.3s ease;
 }
-.expanded {
+header.expanded {
 width: 100%;
 left: 0;
 }

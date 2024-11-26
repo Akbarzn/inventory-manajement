@@ -1,18 +1,19 @@
 <template>
-  <div class="user-list">
-    <div class="header">
+  <div class="user-list container p-4">
+    <div class="header d-flex justify-content-between align-items-center">
       <h2>Daftar Pengguna</h2>
       <button class="add-btn" @click="showAddForm">
         Tambah Pengguna
       </button>
     </div>
-    <div class="user-cards">
+    <div class="user-cards row  gap-3">
     <UserCard 
     v-for="user in filteredUsers"
     :key="user.id"
     :user="user"
     @edit-user="editUser"
     @delete-user="handleDeleteUser"
+    class="cold-md-6 col-lg-4 c-wid mt-2"
     />
     </div>
     <Modal :visible="showForm" @close="cancelEditForm">
@@ -127,6 +128,10 @@ export default {
   margin: 20px 0;
 }
 
+.c-wid{
+  width: 300px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -135,7 +140,7 @@ export default {
 }
 
 h2 {
-  color: #4b3f6b;
+  color: #1483de;
   font-size: 24px;
 }
 
@@ -150,7 +155,7 @@ h2 {
 }
 
 .add-btn:hover {
-  background-color: #5a37a0;
+  background-color: #0289f7;
 }
 
 

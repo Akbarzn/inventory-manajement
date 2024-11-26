@@ -34,7 +34,7 @@
     </div>
    -->
 
-   <div class="scrollable-content">
+   <div class="scrollable-content " :class="{ fullwidth: !isSidebarVisible }" > 
     <UserList v-if="currentComponent === 'users'"
      />
    <ItemList v-if="currentComponent === 'items'" 
@@ -76,6 +76,10 @@ export default {
       type: String,
       required: true
     },
+    isSidebarVisible:{
+      type:Boolean,
+      required:true
+    }
   },
   methods: {
     showEditForm(item) {
@@ -125,5 +129,9 @@ export default {
     padding: 20px;
     background-color: #ffffff;
     max-height: calc(100vh - 60px);
+  }
+  
+  .scrollable-content.fullwidth{
+    margin-left: 0;
   }
 </style>

@@ -23,6 +23,7 @@ export const useUserStore = defineStore("userStore", {
       } catch (error) {
         console.error("Failed to add user:", error);
       }
+      await this.fetchUsers()
     },
     async updateUser(user) {
       console.log('update user ', user)

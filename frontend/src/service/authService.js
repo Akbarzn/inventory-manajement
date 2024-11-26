@@ -60,8 +60,8 @@ export const register = async(username,email,password) => {
                     throw new Error((error.response.data.message || 'User already exists'))  
             }
         }else{
+            console.log('Error during registration:', error)
             throw new Error(error.message || 'Error register')
-            // throw new Error(error.response?.data?.message || error.message)
         }
     }
 }

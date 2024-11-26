@@ -17,11 +17,14 @@
 
       <main
         class="main-content"
-        :class="{ 'content-expanded': !isSidebarVisible && showSidebar }"
+        :class="{ 'content-expanded': !isSidebarVisible && showSidebar , 'fullwidth' : !isSidebarVisible }"
       >
+
+  <!-- <div :class="['main-content', { 'full-width': !isSidebarVisible }]"> -->
         <router-view
           :key="$route.fullPath"
           :currentComponent="$route.params.component"
+          :isSidebarVisible="isSidebarVisible"
         />
       </main>
     </div>
@@ -104,6 +107,14 @@ body {
   margin: 0;
 }
 
+header{
+  padding: 10px 20px;
+  width: calc(100% - 170px);
+  left: 170px;
+  z-index: 999;
+  top: 0;
+}
+
 #app {
   height: 100%;
   display: flex;
@@ -120,11 +131,13 @@ body {
 .main-content {
   flex-grow: 1;
   transition: all 0.3s ease;
-  width: 100%; 
+  width: calc(100% - 200px);
 }
 
 .main-content.content-expanded {
-  width: calc(100% - 200px); 
+  /* width: calc(100% - 200px);  */
+  margin-left: 0;
+  width: 100%;
 }
 
 .app-content.noHeader {

@@ -11,7 +11,7 @@
         :item="item"
         @editItem="editItem"
         @delete-item="deleteItem"
-        class="col-md-6 col-lg-3"
+        class="col-md-6 col-lg-3 c-wid mt-2"
       />
     </div>
     <Modal :visible="showForm" @close="cancelEditForm">
@@ -134,6 +134,9 @@ export default {
   border-radius: 8px;
   margin: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.c-wid{
+  width: 300px;
 }
 
 .header h2 {

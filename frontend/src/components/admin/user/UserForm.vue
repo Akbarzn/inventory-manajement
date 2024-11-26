@@ -125,12 +125,12 @@ export default {
         const payload = {
           username: this.form.username,
           email: this.form.email,
-          // password:this.form.password,
+          password:this.form.password,
           role: this.form.role,
         };
 
-    console.log("Form data:", this.form); // Debug form data
-    console.log("Edit mode:", this.isEdit); // Check edit mode
+    console.log("Form data:", this.form); 
+    console.log("Edit mode:", this.isEdit); 
         if (!this.isEdit) {
           payload.password = this.form.password;
         }
